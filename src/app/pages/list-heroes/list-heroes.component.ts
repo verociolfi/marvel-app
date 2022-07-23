@@ -1,3 +1,5 @@
+import { CharacterService } from './../../services/character.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-heroes.component.scss']
 })
 export class ListHeroesComponent implements OnInit {
+  allCharacters?: Observable<any>;
+  constructor(private characterService:CharacterService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
+    this.getCharacters();
   }
-
+  getCharacters() {
+    this.allCharacters = this.characterService.getPersonagens();
+  }
 }

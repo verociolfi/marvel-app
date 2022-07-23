@@ -1,1 +1,5 @@
-<p>list-heroes works!</p>
+<div class="tabs">
+  <div *ngFor="let character of allCharacters | async">
+    <app-card></app-card>
+  </div>
+</div>
