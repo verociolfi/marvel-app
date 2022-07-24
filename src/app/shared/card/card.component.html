@@ -1,6 +1,6 @@
 <div class="tab" >
-  <input type="checkbox" id="chck3">
-  <label class="tab-label" for="chck3">
+  <input type="checkbox" id="{{character.id}}">
+  <label class="tab-label" for="{{character.id}}">
 
       <div class="info">
         <div><img
@@ -25,8 +25,9 @@
 
 
     </label>
-  <div class="tab-content">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-    reiciendis!
-  </div>
+    <div class="tab-content">
+      <app-card-detail [character]="character">
+      </app-card-detail>
+    </div>
+
 </div>
