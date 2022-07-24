@@ -7,14 +7,13 @@ import { CharacterService } from 'src/app/services/character.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  search:string = "";
-  constructor(private characterService:CharacterService) { }
+  constructor(public characterService:CharacterService) { }
 
   ngOnInit(): void {
   }
 
   setSearch(){
-    this.characterService.getPersonagens(this.search);
+    this.characterService.getPersonagens();
   }
 
 }

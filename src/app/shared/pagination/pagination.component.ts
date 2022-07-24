@@ -1,4 +1,4 @@
-import { CharacterService } from 'src/app/services/character.service';
+import { PaginationService } from './../../services/pagination.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,15 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
-  numberOfPages: number = 1;
-  constructor(private characterService: CharacterService) {
-    this.numberOfPages = this.characterService.getTotalPages();
+  numberOfPages: number = 0;
+  constructor(private paginationService: PaginationService) {
+    this.paginationService.totalPages$.subscribe(data => this.numberOfPages = data);
   }
 
   ngOnInit(): void {
   }
 
+  nextPage() {
+    this.paginationService.nextPage();
+  }
+
+  prevPage() {
+    this.paginationService.prevPage();
+  }
+
+  getActualPage(): number {
+    return this.paginationService.getActualPage();
+  }
+
   counter(i: number) {
     return new Array(i);
-}
+  }
 }
