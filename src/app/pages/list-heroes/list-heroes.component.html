@@ -1,4 +1,10 @@
 <div class="tabs">
+  <div class="head-list">
+            <div>Personagem</div>
+            <div>Series</div>
+            <div>Events</div>
+            <div>Details</div>
+  </div>
   <div *ngFor="let character of list">
     <app-card [character]="character"></app-card>
   </div>

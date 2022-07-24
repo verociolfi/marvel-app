@@ -2,6 +2,7 @@
   <input type="checkbox" id="{{character.id}}">
   <label class="tab-label" for="{{character.id}}">
 
+
       <div class="info">
         <div><img
           src="{{getCharacterPhoto()}}"
@@ -17,7 +18,7 @@
           <div>{{item.name}}</div>
         </div>
       </div>
-      <div class="series">
+      <div class="events">
         <div *ngFor="let item of character.events.items | slice:0:3;">
           <div>{{item.name}}</div>
         </div>
