@@ -1,3 +1,4 @@
+import { PaginationService } from './pagination.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, BehaviorSubject, Subject } from 'rxjs';
@@ -13,11 +14,11 @@ export class CharacterService {
   private total: number;
   private limit: number = 10;
   totalPages$:Subject<number> = new Subject();
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private paginationService: PaginationService) { }
   getPersonagens(filter?: string) {
     const page = this.getPage('characters', filter);
     this.http.get<any>(page).pipe(map((data: any) => data.data)).subscribe(data => {
-      this.setTotal(data.total);
+      this.paginationService.setTotal(data.total);
       this.allCharacters$.next(data.results);
     })
   }
@@ -31,11 +32,17 @@ export class CharacterService {
     return this.pagination;
   }
 
-  setTotal(total: number): void {
-    this.totalPages$.next(Math.round(total/this.limit));
+  getTotalPages(): Observable<number> {
+
   }
 
+
+
   nextPage() {
+    if (this.getPagination())
+  }
+
+  prevPage() {
 
   }
 }

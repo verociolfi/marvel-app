@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class PaginationComponent implements OnInit {
   numberOfPages: number = 1;
   constructor(private characterService: CharacterService) {
-    this.characterService.totalPages$.subscribe(number => this.numberOfPages = number);
+    this.numberOfPages = this.characterService.getTotalPages();
   }
 
   ngOnInit(): void {
