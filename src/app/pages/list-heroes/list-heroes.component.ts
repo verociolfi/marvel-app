@@ -10,7 +10,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 export class ListHeroesComponent implements OnInit {
   list: any = [];
   constructor(private characterService: CharacterService) {
-    this.characterService.allCharacters$.subscribe(data => this.list = data);
+    this.characterService.listCharacters$.subscribe(data => this.list = data);
   }
 
   ngOnInit(): void {

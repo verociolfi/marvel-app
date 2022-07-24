@@ -8,5 +8,14 @@ export class PaginationService {
   totalPages$:Subject<number> = new Subject();
   actualPage:number = 0;
   constructor() { }
+  setTotal(total: number): void {
+    this.totalPages$.next(Math.round(total/this.limit));
+  }
+  nextPage() {
+    if (this.getPagination())
+  }
 
+  prevPage() {
+
+  }
 }
