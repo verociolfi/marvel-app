@@ -1,3 +1,4 @@
+import { PaginationComponent } from './pagination/pagination.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { NgModule } from '@angular/core';
@@ -9,12 +10,13 @@ import { CardComponent } from './card/card.component';
 @NgModule({
   declarations: [
     CardComponent,
-    SearchComponent
+    SearchComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
     FormsModule
   ],
-  exports: [CardComponent, SearchComponent]
+  exports: [CardComponent, SearchComponent, PaginationComponent]
 })
 export class SharedModule { }

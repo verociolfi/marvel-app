@@ -2,33 +2,15 @@
 
 
 #intro {
-  color: $white;
-  padding: 8rem 4rem 6rem 4rem ;
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
+  color: $light;
   display: flex;
-  -moz-flex-direction: column;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -moz-justify-content: -moz-flex-end;
-  -webkit-justify-content: -webkit-flex-end;
-  -ms-justify-content: -ms-flex-end;
-  justify-content: flex-end;
-  -moz-transition: opacity 1s ease, -moz-transform 1s ease;
-  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-  -ms-transition: opacity 1s ease, -ms-transform 1s ease;
-  transition: opacity 1s ease, transform 1s ease;
   position: relative;
-  cursor: default;
-  text-align: center;
+  margin: 0 auto;
+  padding: 2rem;
+  width: calc(100% - 4rem);
+  max-width: 72rem;
+  justify-content: space-between;
   z-index: 1;
-  min-height: 10vh;
 }
 
 
@@ -46,33 +28,12 @@
 
 
 #main {
-  background-color: $white;
+  background-color: $light;
   position: relative;
   margin: 0 auto;
   width: calc(100% - 4rem);
   max-width: 72rem;
   z-index: 2;
+  border-radius: 10px;
 }
 
-  #main > * {
-    padding: 2rem 1rem 1rem 1rem ;
-    margin: 0;
-  }
-
-
-
-  @media screen and (max-width: 736px) {
-
-    #main > * {
-      padding: 2rem 2rem 0.1rem 2rem ;
-    }
-
-  }
-
-  @media screen and (max-width: 480px) {
-
-    #main {
-      width: 100%;
-    }
-
-  }
