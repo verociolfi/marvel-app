@@ -1,3 +1,4 @@
+import { CharacterService } from 'src/app/services/character.service';
 import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -6,6 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class PaginationService {
   totalPages$: Subject<number> = new Subject();
+  public goSearch$: Subject<boolean> = new Subject();
   private total: number = 0;
   private actualPage: number = 0;
   private limit: number = 10;
@@ -21,12 +23,14 @@ export class PaginationService {
     if (this.actualPage + 1 < this.total) {
       this.actualPage += 1;
     }
+    this.goSearch$.next(false);
   }
 
   prevPage() {
     if (this.actualPage - 1 >= 0) {
       this.actualPage -= 1;
     }
+    this.goSearch$.next(false);
   }
   getActualPage():number {
     return this.actualPage;
