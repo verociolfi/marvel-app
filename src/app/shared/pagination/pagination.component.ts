@@ -24,7 +24,11 @@ export class PaginationComponent implements OnInit {
   }
 
   getActualPage(): number {
-    return this.paginationService.getActualPage();
+    return this.paginationService.getActualPage()+1;
+  }
+
+  totalPages(): number {
+    return this.numberOfPages == 0 ? 1 : this.numberOfPages;
   }
 
   counter(i: number) {
