@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
@@ -6,11 +8,13 @@ import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
-    CardComponent
+    CardComponent,
+    SearchComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  exports: [CardComponent]
+  exports: [CardComponent, SearchComponent]
 })
 export class SharedModule { }
