@@ -1,6 +1,6 @@
 import { CharacterService } from './../../services/character.service';
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-list-heroes',
@@ -8,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-heroes.component.scss']
 })
 export class ListHeroesComponent implements OnInit {
-  allCharacters?: Observable<any>;
-  constructor(private characterService:CharacterService) { }
-
-  ngOnInit (): void {
-    this.getCharacters();
+  list: any = [];
+  constructor(private characterService: CharacterService) {
+    this.characterService.allCharacters$.subscribe(data => this.list = data);
   }
-  getCharacters() {
-    this.allCharacters = this.characterService.getPersonagens();
+
+  ngOnInit(): void {
+    this.characterService.getPersonagens();
   }
 }

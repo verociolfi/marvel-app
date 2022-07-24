@@ -1,0 +1,32 @@
+<div class="tab" >
+  <input type="checkbox" id="chck3">
+  <label class="tab-label" for="chck3">
+
+      <div class="info">
+        <div><img
+          src="{{getCharacterPhoto()}}"
+          alt="people"
+          /></div>
+        <div class="hero-name">
+          <p>{{character.name}}</p>
+        </div>
+
+      </div>
+      <div class="series">
+        <div *ngFor="let item of character.series.items | slice:0:3;">
+          <div>{{item.name}}</div>
+        </div>
+      </div>
+      <div class="series">
+        <div *ngFor="let item of character.events.items | slice:0:3;">
+          <div>{{item.name}}</div>
+        </div>
+      </div>
+
+
+    </label>
+  <div class="tab-content">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
+    reiciendis!
+  </div>
+</div>
