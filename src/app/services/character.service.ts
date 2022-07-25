@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { PaginationService } from './pagination.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -15,10 +16,10 @@ export class CharacterService {
   limit: number = 10;
   pagination: number = 0;
   constructor(private http: HttpClient, private paginationService: PaginationService) {
-    this.paginationService.goSearch$.subscribe((refreshSearch) => this.getPersonagens(refreshSearch))
+    this.paginationService.goSearch$.subscribe((refreshSearch) => this.getCharacters(refreshSearch))
   }
 
-  getPersonagens(refreshSearch: boolean) {
+  getCharacters(refreshSearch: boolean) {
     this.refreshPagination(refreshSearch);
     const page = this.getPage('characters');
     this.http.get<any>(page).pipe(map((data: any) => data.data)).subscribe(data => {
@@ -37,6 +38,6 @@ export class CharacterService {
 
 
     const startWith = this.filter ? "&nameStartsWith=" + this.filter : "";
-    return `${this.URL + page}?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}${startWith}&limit=${this.limit}&offset=${this.pagination}`;
+    return `${environment.apiUrl + page}?${startWith}&limit=${this.limit}&offset=${this.pagination}`;
   }
 }

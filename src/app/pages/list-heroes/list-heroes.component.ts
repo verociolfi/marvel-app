@@ -14,6 +14,6 @@ export class ListHeroesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.characterService.getPersonagens(true);
+    this.characterService.getCharacters(true);
   }
 }

@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
   }
 
   setSearch(){
-    this.characterService.getPersonagens(true);
+    this.characterService.getCharacters(true);
   }
 
 }
