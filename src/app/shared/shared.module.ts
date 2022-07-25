@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { CardDetailComponent } from './card/card-detail/card-detail.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -13,12 +14,13 @@ import { CardDetailComponent } from './card/card-detail/card-detail.component';
     CardComponent,
     SearchComponent,
     PaginationComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,
     FormsModule
   ],
-  exports: [CardComponent, SearchComponent, PaginationComponent]
+  exports: [CardComponent, SearchComponent, PaginationComponent, LoadingComponent]
 })
 export class SharedModule { }

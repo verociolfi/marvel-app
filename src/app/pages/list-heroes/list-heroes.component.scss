@@ -9,7 +9,14 @@
   padding-top: 1rem;
   margin: 1rem;
 }
+.loading{
+  text-align: center;
+}
+.no-results{
+  text-align: center;
+  color: $light;
 
+}
 .pagination {
   width: fit-content;
   margin-left: auto;

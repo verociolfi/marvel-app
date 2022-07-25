@@ -1,3 +1,4 @@
+import { Character } from 'src/app/models/character';
 import { environment } from './../../environments/environment.prod';
 import { PaginationService } from './pagination.service';
 import { HttpClient } from '@angular/common/http';
@@ -8,20 +9,23 @@ import { Observable, map, BehaviorSubject, Subject } from 'rxjs';
 })
 export class CharacterService {
 
-  listCharacters$: Subject<any> = new Subject();
+  listCharacters$: Subject<Character[]> = new Subject();
   filter: string = "";
   limit: number = 10;
   pagination: number = 0;
+  isLoadingList: boolean = false;
   constructor(private http: HttpClient, private paginationService: PaginationService) {
     this.paginationService.goSearch$.subscribe((refreshSearch) => this.getCharacters(refreshSearch))
   }
 
   getCharacters(refreshSearch: boolean) {
+    this.isLoadingList = true;
     this.refreshPagination(refreshSearch);
     const page = this.getPage('characters');
     this.http.get<any>(page).pipe(map((data: any) => data.data)).subscribe(data => {
       if (refreshSearch) { this.refreshSearch(data); }
       this.listCharacters$.next(data.results);
+      this.isLoadingList = false;
     })
   }
   refreshPagination(refreshSearch:boolean) {
@@ -32,8 +36,6 @@ export class CharacterService {
   }
 
   getPage(page: string): string {
-
-
     const startWith = this.filter ? "&nameStartsWith=" + this.filter : "";
     return `${environment.apiUrl + page}?${startWith}&limit=${this.limit}&offset=${this.pagination}`;
   }

@@ -1,7 +1,15 @@
+
+
 <div class="tabs">
-  <div *ngFor="let character of list">
-    <app-card [character]="character"></app-card>
+  <div class="loading" *ngIf="showLoading()"><app-loading></app-loading></div>
+  <div *ngIf="noResults()" class="no-results">Nenhum resultado encontrado.
+    Pesquise outro personagem.</div>
+  <div *ngIf="!showLoading()">
+    <div *ngFor="let character of list">
+      <app-card [character]="character"></app-card>
+    </div>
   </div>
+
 
 </div>
 <div class="pagination">
