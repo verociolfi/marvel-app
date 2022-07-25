@@ -9,9 +9,6 @@ import { Observable, map, BehaviorSubject, Subject } from 'rxjs';
 export class CharacterService {
 
   listCharacters$: Subject<any> = new Subject();
-  PUBLIC_KEY = '87952e8e5f33d4856e5fefcfad3ac5b2';
-  HASH = '16b22cbca93ad3caef1f08f168c32591';
-  URL = `http://gateway.marvel.com/v1/public/`;
   filter: string = "";
   limit: number = 10;
   pagination: number = 0;
