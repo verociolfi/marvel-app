@@ -17,10 +17,12 @@ export class PaginationComponent implements OnInit {
 
   nextPage() {
     this.paginationService.nextPage();
+    window.scroll(0,0);
   }
 
   prevPage() {
     this.paginationService.prevPage();
+    window.scroll(0,0);
   }
 
   getActualPage(): number {

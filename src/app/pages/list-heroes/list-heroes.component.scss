@@ -1,18 +1,13 @@
 
 @import '../../../sass/variables';
 
-.head-list{
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  color: $light;
-  background-color: $deep;
-  border-radius: 10px;
-}
+
 .tabs {
   border-radius: 8px;
   overflow: hidden;
-  padding: 1rem;
+  padding: 2rem;
+  padding-top: 1rem;
+  margin: 1rem;
 }
 
 .pagination {
@@ -20,3 +15,5 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+

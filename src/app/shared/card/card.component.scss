@@ -1,11 +1,13 @@
 
 @import '../../../sass/variables';
 
-
+.title{
+  font-weight: bold;
+}
 .info {
   display: flex;
   align-items: center;
-  width: 20rem;
+  width: 25rem;
   font-weight: bold;
 }
 input[type="checkbox"]{
@@ -18,7 +20,7 @@ input[type="checkbox"]{
 .series{
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 15rem;
   padding-left: 1rem;
   padding-right: 1rem;
 
@@ -57,6 +59,8 @@ img {
     display: flex;
     align-items: center;
     padding: 1em;
+    padding-top: 25px;
+    padding-bottom: 25px;
     background: $light;
     cursor: pointer;
 
@@ -111,4 +115,21 @@ input:checked {
     max-height: 100vh;
     padding: 1em;
   }
+}
+@media screen and (max-width: 600px) {
+  .series{
+    display: none;
+
+  }
+  .events{
+    display: none;
+
+  }
+}
+@media screen and (min-width: 768px) {
+  .series{
+    width: 25rem;
+
+  }
+
 }

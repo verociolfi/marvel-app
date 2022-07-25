@@ -1,7 +1,22 @@
 
 @import '../../../sass/variables';
+
 .search{
-  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+button{
+  border-radius: 0.4rem;
+  background-color: $red-light;
+  color: $light;
+  border: 0px;
+  margin: 0.5rem;
+  margin-left: -0.2rem;
+  border-radius: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: bold;
+
 }
 
 input{
@@ -13,7 +28,8 @@ input{
   border: 1px solid $grey;
   border-radius: 0.4rem;
   padding: 1rem;
-  width: 20rem;
+  width: 100%;
+  margin: 0.5rem;
 
 }
 input[type=text]:focus{
@@ -21,5 +37,6 @@ input[type=text]:focus{
   border: 1px solid $grey;
   border-radius: 0.4rem;
   padding: 1rem;
+
 
 }

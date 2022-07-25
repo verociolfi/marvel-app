@@ -1,3 +1,5 @@
-<button (click)="prevPage()"><<<<</button>
-{{getActualPage()+" / "+totalPages()}}
-<button (click)="nextPage()">>>>></button>
+<div class="pagination">
+    <button (click)="prevPage()" class="button-pagination"><</button>
+    <span class="pages">{{getActualPage()+" / "+totalPages()}}</span>
+    <button (click)="nextPage()" class="button-pagination">></button>
+</div>

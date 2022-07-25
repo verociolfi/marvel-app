@@ -1,1 +1,23 @@
-<p>{{character.description|| "sem descrição"}}</p>
+<p>{{character.description|| "Este personagem não tem descrição"}}</p> <br>
+<div class="series">
+  <span class="title-mobile">Series</span><br>
+  <div *ngIf="character.series.items.length; else noRegister">
+    <div *ngFor="let item of character.series.items | slice:0:3;">
+      <div>{{item.name}}</div><br>
+    </div>
+  </div>
+</div>
+<div class="series">
+  <span class="title-mobile">Events</span><br>
+  <div *ngIf="character.events.items.length; else noRegister">
+    <div *ngFor="let item of character.events.items | slice:0:3;">
+      <div>{{item.name}} </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noRegister>
+  <div>
+    Nenhum registro cadastrado
+  </div>
+</ng-template>

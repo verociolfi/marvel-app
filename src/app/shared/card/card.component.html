@@ -1,34 +1,46 @@
-<div class="tab" >
+<div class="tab">
   <input type="checkbox" id="{{character.id}}">
   <label class="tab-label" for="{{character.id}}">
 
 
-      <div class="info">
-        <div><img
+    <div class="info">
+      <div><img
           src="{{getCharacterPhoto()}}"
           alt="people"
           /></div>
-        <div class="hero-name">
-          <p>{{character.name}}</p>
-        </div>
-
+      <div class="hero-name">
+        <p>{{character.name}}</p>
       </div>
-      <div class="series">
+
+    </div>
+    <div class="series">
+      <span class="title">Series:</span>
+      <div *ngIf="character.events.items.length; else noRegister">
         <div *ngFor="let item of character.series.items | slice:0:3;">
-          <div>{{item.name}}</div>
+          <div>{{item.name | slice:0:27}}...</div>
         </div>
       </div>
-      <div class="events">
+    </div>
+    <div class="events">
+      <span class="title">Eventos:</span>
+      <div *ngIf="character.events.items.length; else noRegister">
         <div *ngFor="let item of character.events.items | slice:0:3;">
-          <div>{{item.name}}</div>
+          <div>{{item.name|| "Não há eventos registrados"}}</div>
         </div>
       </div>
-
-
-    </label>
-    <div class="tab-content">
-      <app-card-detail [character]="character">
-      </app-card-detail>
     </div>
 
+
+  </label>
+  <div class="tab-content">
+    <app-card-detail [character]="character">
+    </app-card-detail>
+  </div>
+
 </div>
+
+<ng-template #noRegister>
+  <div>
+    Nenhum registro cadastrado
+  </div>
+</ng-template>

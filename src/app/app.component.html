@@ -9,15 +9,21 @@
       rel='stylesheet'>
   </head>
   <body>
-    <div id="intro">
-      <div>
-        <h1>Marvel App</h1><br>
-        <p>feito por Veronica Ciolfi</p>
+    <div class="header">
+      <a class="logo">Busca Marvel</a>
+
+
+      <div class="header-right">
+        <app-search></app-search>
+
       </div>
-      <app-search></app-search>
     </div>
+
     <div id="main">
       <router-outlet></router-outlet>
+      <span class="copyright">Desenvolvido por Veronica Ciolfi</span>
     </div>
+
+
   </body>
 </html>

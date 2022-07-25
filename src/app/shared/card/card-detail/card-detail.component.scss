@@ -1,0 +1,36 @@
+
+
+.title-mobile{
+  font-weight: bold;
+  font-size: large;
+}
+
+@media screen and (min-width: 768px) {
+  .series{
+    display: none;
+
+
+  }
+  .events{
+    display: none;
+
+
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .series{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .events{
+    display: flex;
+    flex-direction: column;
+
+  }
+}
